@@ -1,0 +1,33 @@
+.clearfix
+  = f.label :name, t("activerecord.attributes.company.name", :default => "Name"), :class => :label
+  .input
+    = f.text_field :name, :class => 'text_field'
+.clearfix
+  = f.label :department, t("activerecord.attributes.company.department", :default => "Department"), :class => :label
+  .input
+    = f.text_field :department, :class => 'text_field'
+.clearfix
+  = f.label :phone, t("activerecord.attributes.company.phone", :default => "Phone"), :class => :label
+  .input
+    = f.text_field :phone, :class => 'text_field'
+.clearfix
+  = f.label :fax, t("activerecord.attributes.company.fax", :default => "Fax"), :class => :label
+  .input
+    = f.text_field :fax, :class => 'text_field'
+.clearfix
+  = f.label :address, t("activerecord.attributes.company.address", :default => "Address"), :class => :label
+  .input
+    = f.text_area :address, :class => 'text_field', :size => ''
+.clearfix
+  = f.label :email, t("activerecord.attributes.company.email", :default => "Email"), :class => :label
+  .input
+    = f.text_field :email, :class => 'text_field'
+.clearfix
+  = f.label :category, t("activerecord.attributes.company.category", :default => "Category"), :class => :label
+  .input
+    = f.text_field :category, :class => 'text_field'
+
+.form-actions
+  %button{:class => "btn primary", :type => "submit"} Save
+  or
+  = link_to "Cancel", companies_path

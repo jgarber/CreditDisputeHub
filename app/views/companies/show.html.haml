@@ -1,0 +1,24 @@
+%h1= @company.name
+
+.company-categories
+  %span.label= @company.category
+
+%p= @company.department
+
+%p
+  %b= t("activerecord.attributes.company.phone", :default => t("activerecord.labels.phone", :default => "Phone")) + ":"
+  = @company.phone
+%p
+  %b= t("activerecord.attributes.company.fax", :default => t("activerecord.labels.fax", :default => "Fax")) + ":"
+  = @company.fax
+%p
+  %b= t("activerecord.attributes.company.address", :default => t("activerecord.labels.address", :default => "Address")) + ":"
+  = @company.address
+%p
+  %b= t("activerecord.attributes.company.email", :default => t("activerecord.labels.email", :default => "Email")) + ":"
+  = @company.email
+
+.form-actions
+  = link_to "Back", companies_path, :class => 'btn'
+  = link_to "Edit", edit_company_path(@company), :class => 'btn'
+  = link_to "Delete", company_path(@company), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn'
