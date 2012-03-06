@@ -1,0 +1,25 @@
+.clearfix
+  = f.label :title, t("activerecord.attributes.dispute.title", :default => "Title"), :class => :label
+  .input
+    = f.text_field :title, :class => 'text_field'
+.clearfix
+  = f.label :company_id, t("activerecord.attributes.dispute.company_id", :default => "Company"), :class => :label
+  .input
+    = f.number_field :company_id, :class => 'number_field'
+.clearfix
+  = f.label :disputed_amount, t("activerecord.attributes.dispute.disputed_amount", :default => "Disputed amount"), :class => :label
+  .input
+    = f.text_field :disputed_amount, :class => 'text_field'
+.clearfix
+  = f.label :description, t("activerecord.attributes.dispute.description", :default => "Description"), :class => :label
+  .input
+    = f.text_area :description, :class => 'text_area'
+.clearfix
+  = f.label :private, t("activerecord.attributes.dispute.private", :default => "Private"), :class => :label
+  .input
+    = f.check_box :private, :class => 'check_box'
+
+.form-actions
+  %button{:class => "btn primary", :type => "submit"} Save
+  or
+  = link_to "Cancel", disputes_path

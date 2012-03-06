@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120306201913) do
+ActiveRecord::Schema.define(:version => 20120306213752) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20120306201913) do
     t.string   "category"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "disputes", :force => true do |t|
+    t.string   "title"
+    t.integer  "company_id"
+    t.string   "disputed_amount"
+    t.text     "description"
+    t.boolean  "private"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

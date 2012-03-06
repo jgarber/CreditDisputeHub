@@ -1,0 +1,15 @@
+%label{:class => "label"}= t("activerecord.attributes.dispute.title", :default => t("activerecord.labels.title", :default => "Title")) + ":"
+%p= @dispute.title
+%label{:class => "label"}= t("activerecord.attributes.dispute.company_id", :default => t("activerecord.labels.company_id", :default => "Company")) + ":"
+%p= @dispute.company_id
+%label{:class => "label"}= t("activerecord.attributes.dispute.disputed_amount", :default => t("activerecord.labels.disputed_amount", :default => "Disputed amount")) + ":"
+%p= @dispute.disputed_amount
+%label{:class => "label"}= t("activerecord.attributes.dispute.description", :default => t("activerecord.labels.description", :default => "Description")) + ":"
+%p= @dispute.description
+%label{:class => "label"}= t("activerecord.attributes.dispute.private", :default => t("activerecord.labels.private", :default => "Private")) + ":"
+%p= @dispute.private
+
+.form-actions
+  = link_to "Back", disputes_path, :class => 'btn'
+  = link_to "Edit", edit_dispute_path(@dispute), :class => 'btn'
+  = link_to "Delete", dispute_path(@dispute), :method => "delete", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn'
