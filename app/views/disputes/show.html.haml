@@ -4,7 +4,7 @@
   = @dispute.company.name
 %p 
   %b= t("activerecord.attributes.dispute.disputed_amount", :default => t("activerecord.labels.disputed_amount", :default => "Disputed amount")) + ":"
-  = @dispute.disputed_amount
+  = number_to_currency(@dispute.disputed_amount)
 %b= t("activerecord.attributes.dispute.description", :default => t("activerecord.labels.description", :default => "Description")) + ":"
 %p= @dispute.description
 

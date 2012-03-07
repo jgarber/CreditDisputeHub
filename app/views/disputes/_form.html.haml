@@ -13,7 +13,9 @@
   .control-group
     = f.label :disputed_amount, :class => 'control-label'
     .controls
-      = f.text_field :disputed_amount, :class => 'input-small'
+      .input-prepend
+        %span.add-on $
+        = f.text_field :disputed_amount, :class => 'input-small'
   .control-group
     = f.label :description, :class => 'control-label'
     .controls
