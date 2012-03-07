@@ -1,6 +1,2 @@
-.page-header
-  %h1 Edit Dispute
-
-= form_for @dispute, :url => dispute_path(@dispute), :html => { :class => "edit_dispute form-horizontal", :id => "edit_dispute" } do |f|
-  %input{:name => "_method", :type => "hidden", :value =>"put"}
+= form_for @dispute, :html => { :class => "edit_dispute form-horizontal", :id => "edit_dispute" } do |f|
   = render :partial => "form", :locals => {:f => f}

@@ -1,5 +1,2 @@
-.page-header
-  %h1 New Dispute
-
-= form_for @dispute, :url => disputes_path, :html => { :class => 'form-horizontal' } do |f|
+= form_for @dispute, :html => { :class => 'form-horizontal' } do |f|
   = render :partial => "form", :locals => {:f => f}

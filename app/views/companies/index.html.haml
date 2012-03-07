@@ -14,8 +14,8 @@
         %td= link_to company.name, company_path(company)
         %td= company.created_at
         %td
-          = link_to "Show", company_path(company)
-          = link_to "Edit", edit_company_path(company)
-          = link_to "Destroy", company_path(company), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+          = link_to "Show", company_path(company), :class => 'btn btn-mini'
+          = link_to "Edit", edit_company_path(company), :class => 'btn btn-mini'
+          = link_to "Destroy", company_path(company), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
 
 = link_to "New", new_company_path, :class => 'btn btn-primary'

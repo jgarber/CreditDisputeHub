@@ -14,8 +14,8 @@
         %td= link_to dispute.title, dispute_path(dispute)
         %td= dispute.created_at
         %td
-          = link_to "Show", dispute_path(dispute)
-          = link_to "Edit", edit_dispute_path(dispute)
-          = link_to "Destroy", dispute_path(dispute), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+          = link_to "Show", dispute_path(dispute), :class => 'btn btn-mini'
+          = link_to "Edit", edit_dispute_path(dispute), :class => 'btn btn-mini'
+          = link_to "Destroy", dispute_path(dispute), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", :class => 'btn btn-mini btn-danger' 
 
 = link_to "New", new_dispute_path, :class => 'btn btn-primary'
