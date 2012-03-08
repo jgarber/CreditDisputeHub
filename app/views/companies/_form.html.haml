@@ -3,7 +3,7 @@
     = controller.action_name.capitalize
     Company
   .control-group
-    = f.label :name, :class => 'control-label'
+    = f.label :name, "Company Name", :class => 'control-label'
     .controls
       = f.text_field :name
   .control-group
@@ -30,6 +30,3 @@
     = f.label :category, :class => 'control-label'
     .controls
       = f.text_field :category
-  .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
-    = link_to "Cancel", companies_path, :class => 'btn'

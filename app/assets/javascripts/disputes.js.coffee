@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $dispute_company_subform = $("#dispute_company_subform")
+  updateCompanySubform = ->
+    if $(this).val() == ''
+      $dispute_company_subform.show()
+    else
+      $dispute_company_subform.hide()
+  $("#dispute_company_id").change(updateCompanySubform).
+    trigger("change")
+

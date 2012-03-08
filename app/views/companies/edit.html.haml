@@ -1,2 +1,5 @@
 = form_for @company, :html => { :class => "edit_company form-horizontal", :id => "edit_company" } do |f|
   = render :partial => "form", :locals => {:f => f}
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to "Cancel", companies_path, :class => 'btn'

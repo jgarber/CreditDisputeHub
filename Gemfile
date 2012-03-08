@@ -10,10 +10,12 @@ gem 'haml'
 
 group :test, :development do
   gem "rspec-rails"
+  gem 'factory_girl'
 end
 
 group :development do
   gem 'powder'
+  gem 'guard-rspec'
 end
 
 # Gems used only for assets and not required
