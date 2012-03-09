@@ -2,15 +2,15 @@
   %legend
     = controller.action_name.capitalize
     Dispute
-  = f.input :title, :input_html => {class: "span5"}
+  = f.input :title
   = f.association :company, :collection => Company.all.map {|c| [ c.name, c.id ] } + [["Other", '']], :include_blank => false
   #dispute_company_subform.well.hide
     = f.fields_for :company_attributes do |company_fields|
       = render 'companies/form', :f => company_fields
   = f.input :disputed_amount, :wrapper => :prepend do
     %span.add-on $
-    = f.input_field :disputed_amount, :class => 'input-small'
-  = f.input :description, :label => "Describe the problem", :input_html => {class: "span5", rows: 10}
+    = f.input_field :disputed_amount
+  = f.input :description, :label => "Describe the problem"
   = f.input :private, :hint => "The dispute will only be visible to you. You will not be able to receive help and advice from other users."
   .form-actions
     = f.button :submit, :class => 'btn-primary'

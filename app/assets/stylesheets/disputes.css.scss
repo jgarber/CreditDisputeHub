@@ -2,4 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*#dispute_title { @extend .span5; }*/
+#dispute_title { @extend .span5; }
+#dispute_disputed_amount { @extend .input-small; }
+#dispute_description { @extend .span5; height: 15em; }
