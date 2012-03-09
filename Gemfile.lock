@@ -1,12 +1,3 @@
-GIT
-  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: 96490ace9060895b01a284cafb2a821abcd811ee
-  specs:
-    twitter-bootstrap-rails (2.0.3)
-      actionpack (>= 3.1)
-      less-rails (~> 2.1.6)
-      railties (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,6 +29,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bootstrap-sass (2.0.1)
     builder (3.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -46,8 +38,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
-    commonjs (0.2.0)
-      therubyracer (~> 0.9.9)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.3.0)
@@ -68,13 +58,6 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.6.5)
-    less (2.0.9)
-      commonjs (~> 0.2.0)
-      therubyracer (~> 0.9.9)
-    less-rails (2.1.7)
-      actionpack (>= 3.1)
-      less (~> 2.0.7)
-    libv8 (3.3.10.4)
     mail (2.4.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -135,8 +118,6 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5)
-    therubyracer (0.9.10)
-      libv8 (~> 3.3.10)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -151,6 +132,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
   factory_girl
   guard-rspec
@@ -162,5 +144,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3
-  twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
