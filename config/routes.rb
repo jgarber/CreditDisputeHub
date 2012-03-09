@@ -1,7 +1,9 @@
 CreditDisputeHub::Application.routes.draw do
   resources :disputes
-
   resources :companies
+
+  resources :sessions
+  match "/auth/:provider/callback" => "sessions#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

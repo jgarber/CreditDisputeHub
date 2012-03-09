@@ -8,6 +8,7 @@ gem 'rails', '3.2.2'
 gem 'sqlite3'
 gem 'haml'
 gem 'simple_form'
+gem 'omniauth-twitter'
 
 group :test, :development do
   gem "rspec-rails"
