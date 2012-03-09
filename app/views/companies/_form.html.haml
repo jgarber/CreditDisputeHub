@@ -2,31 +2,14 @@
   %legend
     = controller.action_name.capitalize
     Company
-  .control-group
-    = f.label :name, "Company Name", :class => 'control-label'
-    .controls
-      = f.text_field :name
-  .control-group
-    = f.label :department, :class => 'control-label'
-    .controls
-      = f.text_field :department
-  .control-group
-    = f.label :phone, :class => 'control-label'
-    .controls
-      = f.text_field :phone
-  .control-group
-    = f.label :fax, :class => 'control-label'
-    .controls
-      = f.text_field :fax
-  .control-group
-    = f.label :address, :class => 'control-label'
-    .controls
-      = f.text_area :address, :rows => 3
-  .control-group
-    = f.label :email, :class => 'control-label'
-    .controls
-      = f.text_field :email
-  .control-group
-    = f.label :category, :class => 'control-label'
-    .controls
-      = f.text_field :category
+  = f.input :name, :label => "Company Name"
+  = f.input :department
+  = f.input :phone
+  = f.input :fax
+  = f.input :address, :as => :text
+  = f.input :email
+  = f.input :category, :hint => "e.g. Auto Loans or Credit Card"
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to "Cancel", disputes_path, :class => 'btn'
+

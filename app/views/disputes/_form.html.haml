@@ -16,32 +16,3 @@
     = f.button :submit, :class => 'btn-primary'
     = link_to "Cancel", disputes_path, :class => 'btn'
 
-  -#.control-group
-    -#= f.label :title, :class => 'control-label'
-    -#.controls
-      -#= f.text_field :title
-  -#.control-group
-    -#= f.label :company_id, :class => 'control-label'
-    -#.controls
-      -#= f.select :company_id, Company.all.map {|c| [ c.name, c.id ] } + [["Other", '']]
-      -##dispute_company_subform.well.hide
-        -#= f.fields_for :company_attributes do |company_fields|
-          -#= render 'companies/form', :f => company_fields
-  -#.control-group
-    -#= f.label :disputed_amount, :class => 'control-label'
-    -#.controls
-      -#.input-prepend
-        -#%span.add-on $
-        -#= f.text_field :disputed_amount, :class => 'input-small'
-  -#.control-group
-    -#= f.label :description, "Describe the problem", :class => 'control-label'
-    -#.controls
-      -#= f.text_area :description, :rows => '10', :class => 'span5'
-  -#.control-group
-    -#= f.label :private, :class => 'control-label'
-    -#.controls
-      -#= f.check_box :private
-      -#%span.help-block The dispute will only be visible to you. You will not be able to receive help and advice from other users.
-  -#.form-actions
-    -#= f.submit nil, :class => 'btn btn-primary'
-    -#= link_to "Cancel", disputes_path, :class => 'btn'
