@@ -19,14 +19,6 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe DisputesController do
-
-  # This should return the minimal set of attributes required to create a valid
-  # Dispute. As you add validations to Dispute, be sure to
-  # update the return value of this method accordingly.
-  def valid_attributes
-    {}
-  end
-  
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # DisputesController. Be sure to keep this updated too.
@@ -36,7 +28,7 @@ describe DisputesController do
 
   describe "GET index" do
     it "assigns all disputes as @disputes" do
-      dispute = Dispute.create! valid_attributes
+      dispute = Factory :dispute
       get :index, {}, valid_session
       assigns(:disputes).should eq([dispute])
     end
@@ -44,7 +36,7 @@ describe DisputesController do
 
   describe "GET show" do
     it "assigns the requested dispute as @dispute" do
-      dispute = Dispute.create! valid_attributes
+      dispute = Factory :dispute
       get :show, {:id => dispute.to_param}, valid_session
       assigns(:dispute).should eq(dispute)
     end
@@ -59,7 +51,7 @@ describe DisputesController do
 
   describe "GET edit" do
     it "assigns the requested dispute as @dispute" do
-      dispute = Dispute.create! valid_attributes
+      dispute = Factory :dispute
       get :edit, {:id => dispute.to_param}, valid_session
       assigns(:dispute).should eq(dispute)
     end
@@ -67,20 +59,22 @@ describe DisputesController do
 
   describe "POST create" do
     describe "with valid params" do
+      let(:dispute_params) { Factory.attributes_for(:dispute).merge(:company_attributes => Factory.attributes_for(:company)) }
+
       it "creates a new Dispute" do
         expect {
-          post :create, {:dispute => valid_attributes}, valid_session
+          post :create, {:dispute => dispute_params}, valid_session
         }.to change(Dispute, :count).by(1)
       end
 
       it "assigns a newly created dispute as @dispute" do
-        post :create, {:dispute => valid_attributes}, valid_session
+        post :create, {:dispute => dispute_params}, valid_session
         assigns(:dispute).should be_a(Dispute)
         assigns(:dispute).should be_persisted
       end
 
       it "redirects to the created dispute" do
-        post :create, {:dispute => valid_attributes}, valid_session
+        post :create, {:dispute => dispute_params}, valid_session
         response.should redirect_to(Dispute.last)
       end
     end
@@ -105,7 +99,7 @@ describe DisputesController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested dispute" do
-        dispute = Dispute.create! valid_attributes
+        dispute = Factory :dispute
         # Assuming there are no other disputes in the database, this
         # specifies that the Dispute created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -115,21 +109,21 @@ describe DisputesController do
       end
 
       it "assigns the requested dispute as @dispute" do
-        dispute = Dispute.create! valid_attributes
-        put :update, {:id => dispute.to_param, :dispute => valid_attributes}, valid_session
+        dispute = Factory :dispute
+        put :update, {:id => dispute.to_param, :dispute => Factory.attributes_for(:dispute)}, valid_session
         assigns(:dispute).should eq(dispute)
       end
 
       it "redirects to the dispute" do
-        dispute = Dispute.create! valid_attributes
-        put :update, {:id => dispute.to_param, :dispute => valid_attributes}, valid_session
+        dispute = Factory :dispute
+        put :update, {:id => dispute.to_param, :dispute => Factory.attributes_for(:dispute)}, valid_session
         response.should redirect_to(dispute)
       end
     end
 
     describe "with invalid params" do
       it "assigns the dispute as @dispute" do
-        dispute = Dispute.create! valid_attributes
+        dispute = Factory :dispute
         # Trigger the behavior that occurs when invalid params are submitted
         Dispute.any_instance.stub(:save).and_return(false)
         put :update, {:id => dispute.to_param, :dispute => {}}, valid_session
@@ -137,7 +131,7 @@ describe DisputesController do
       end
 
       it "re-renders the 'edit' template" do
-        dispute = Dispute.create! valid_attributes
+        dispute = Factory :dispute
         # Trigger the behavior that occurs when invalid params are submitted
         Dispute.any_instance.stub(:save).and_return(false)
         put :update, {:id => dispute.to_param, :dispute => {}}, valid_session
@@ -148,14 +142,14 @@ describe DisputesController do
 
   describe "DELETE destroy" do
     it "destroys the requested dispute" do
-      dispute = Dispute.create! valid_attributes
+      dispute = Factory :dispute
       expect {
         delete :destroy, {:id => dispute.to_param}, valid_session
       }.to change(Dispute, :count).by(-1)
     end
 
     it "redirects to the disputes list" do
-      dispute = Dispute.create! valid_attributes
+      dispute = Factory :dispute
       delete :destroy, {:id => dispute.to_param}, valid_session
       response.should redirect_to(disputes_url)
     end
