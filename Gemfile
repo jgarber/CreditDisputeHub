@@ -10,14 +10,15 @@ gem 'haml'
 gem 'simple_form'
 gem 'omniauth-twitter'
 
-group :test, :development do
-  gem "rspec-rails"
-  gem 'factory_girl'
-end
-
 group :development do
   gem 'powder'
   gem 'guard-rspec'
+end
+
+group :test do
+  gem "rspec-rails"
+  gem 'factory_girl'
+  gem 'shoulda-matchers'
 end
 
 # Gems used only for assets and not required

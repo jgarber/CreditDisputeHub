@@ -19,14 +19,6 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe CompaniesController do
-
-  # This should return the minimal set of attributes required to create a valid
-  # Company. As you add validations to Company, be sure to
-  # update the return value of this method accordingly.
-  def valid_attributes
-    {}
-  end
-  
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # CompaniesController. Be sure to keep this updated too.
@@ -36,7 +28,7 @@ describe CompaniesController do
 
   describe "GET index" do
     it "assigns all companies as @companies" do
-      company = Company.create! valid_attributes
+      company = Factory :company
       get :index, {}, valid_session
       assigns(:companies).should eq([company])
     end
@@ -44,7 +36,7 @@ describe CompaniesController do
 
   describe "GET show" do
     it "assigns the requested company as @company" do
-      company = Company.create! valid_attributes
+      company = Factory :company
       get :show, {:id => company.to_param}, valid_session
       assigns(:company).should eq(company)
     end
@@ -59,7 +51,7 @@ describe CompaniesController do
 
   describe "GET edit" do
     it "assigns the requested company as @company" do
-      company = Company.create! valid_attributes
+      company = Factory :company
       get :edit, {:id => company.to_param}, valid_session
       assigns(:company).should eq(company)
     end
@@ -67,6 +59,8 @@ describe CompaniesController do
 
   describe "POST create" do
     describe "with valid params" do
+      let(:valid_attributes) { Factory.attributes_for :company }
+
       it "creates a new Company" do
         expect {
           post :create, {:company => valid_attributes}, valid_session
@@ -104,8 +98,10 @@ describe CompaniesController do
 
   describe "PUT update" do
     describe "with valid params" do
+      let(:valid_attributes) { Factory.attributes_for :company }
+
       it "updates the requested company" do
-        company = Company.create! valid_attributes
+        company = Factory :company
         # Assuming there are no other companies in the database, this
         # specifies that the Company created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -115,13 +111,13 @@ describe CompaniesController do
       end
 
       it "assigns the requested company as @company" do
-        company = Company.create! valid_attributes
+        company = Factory :company
         put :update, {:id => company.to_param, :company => valid_attributes}, valid_session
         assigns(:company).should eq(company)
       end
 
       it "redirects to the company" do
-        company = Company.create! valid_attributes
+        company = Factory :company
         put :update, {:id => company.to_param, :company => valid_attributes}, valid_session
         response.should redirect_to(company)
       end
@@ -129,7 +125,7 @@ describe CompaniesController do
 
     describe "with invalid params" do
       it "assigns the company as @company" do
-        company = Company.create! valid_attributes
+        company = Factory :company
         # Trigger the behavior that occurs when invalid params are submitted
         Company.any_instance.stub(:save).and_return(false)
         put :update, {:id => company.to_param, :company => {}}, valid_session
@@ -137,7 +133,7 @@ describe CompaniesController do
       end
 
       it "re-renders the 'edit' template" do
-        company = Company.create! valid_attributes
+        company = Factory :company
         # Trigger the behavior that occurs when invalid params are submitted
         Company.any_instance.stub(:save).and_return(false)
         put :update, {:id => company.to_param, :company => {}}, valid_session
@@ -148,14 +144,14 @@ describe CompaniesController do
 
   describe "DELETE destroy" do
     it "destroys the requested company" do
-      company = Company.create! valid_attributes
+      company = Factory :company
       expect {
         delete :destroy, {:id => company.to_param}, valid_session
       }.to change(Company, :count).by(-1)
     end
 
     it "redirects to the companies list" do
-      company = Company.create! valid_attributes
+      company = Factory :company
       delete :destroy, {:id => company.to_param}, valid_session
       response.should redirect_to(companies_url)
     end

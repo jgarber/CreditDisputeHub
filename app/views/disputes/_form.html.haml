@@ -1,3 +1,4 @@
+= f.error_notification
 %fieldset
   %legend
     = controller.action_name.capitalize
@@ -13,6 +14,7 @@
   = f.input :description, :label => "Describe the problem"
   = f.input :private, :hint => "The dispute will only be visible to you. You will not be able to receive help and advice from other users."
   .form-actions
+    = f.error :base
     = f.button :submit, :class => 'btn-primary'
     = link_to "Cancel", disputes_path, :class => 'btn'
 

@@ -1,3 +1,4 @@
+= f.error_notification
 %fieldset
   %legend
     = controller.action_name.capitalize
@@ -9,7 +10,4 @@
   = f.input :address, :as => :text
   = f.input :email
   = f.input :category, :hint => "e.g. Auto Loans or Credit Card"
-  .form-actions
-    = f.button :submit, :class => 'btn-primary'
-    = link_to "Cancel", disputes_path, :class => 'btn'
 
