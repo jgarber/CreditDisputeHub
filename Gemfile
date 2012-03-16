@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'haml'
 gem 'simple_form'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'powder'

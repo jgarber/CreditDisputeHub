@@ -1,3 +1,19 @@
 %h1 Sign In to CreditDisputeHub
 
-%p CreditDisputeHub has no signup form or passwords. Just sign in using one of the options below. If you don't already have an account with one of these providers, choose Google and create a free Google Account.
+%p CreditDisputeHub has no signup process or passwords. Just sign in using one of the options below. 
+
+%ul#social-login
+  %li.google
+    = link_to "/auth/google_oauth2" do
+      %i
+      Sign in with Google
+  %li.facebook
+    = link_to "/auth/facebook" do
+      %i
+      Sign in with Facebook
+  %li.twitter
+    = link_to "/auth/twitter" do
+      %i
+      Sign in with Twitter
+
+%p.help-block If you don't already have an account with one of these providers, choose Google and create a free Google Account.

@@ -1,3 +1,33 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#social-login {
+  @extend .clearfix;
+  li {
+    float: left;
+    list-style-type: none;
+    margin: 40px;
+  }
+  a {
+    @extend .btn;
+    @extend .btn-large;
+    @extend .btn-inverse;
+  }
+  .google a { @include buttonBackground(#7BAEF9, #0A52CE); }
+  .facebook a { @include buttonBackground(#6d89b9, #445f8e); }
+  .twitter a { @include buttonBackground(#4ac6fa, #2499ce); }
+  i {
+    display: inline-block;
+    background-image: asset-url("social-login-icons.png", image);
+    background-repeat: no-repeat;
+    vertical-align: text-top;
+    width: 33px;
+    height: 33px;
+    margin: -6px;
+  }
+  .google i { background-position: 0 0; }
+  .facebook i { background-position: -33px 0; }
+  .twitter i { background-position: -66px 0; }
+}
+
